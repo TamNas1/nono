@@ -1,6 +1,8 @@
 body{
-  background: rgb(64,100,210);
-  background: linear-gradient(90deg, rgba(64,100,210,1) 0%, rgba(73,128,247,1) 0%, rgba(19,54,198,1) 100%);  }
+  /* background: rgb(64,100,210);
+  background: linear-gradient(90deg, rgba(64,100,210,1) 0%, rgba(73,128,247,1) 0%, rgba(19,54,198,1) 100%);   */
+background: rgb(182, 191, 125)
+}
 input {
   width: 50px;
   height: 50px;
@@ -28,7 +30,7 @@ h1{
   /* margin: 0 auto; */
 }
 .result1{
-  color: white;
+  color: rgb(108, 87, 71);
   font-size: 30px;
   margin:1px;
 }
@@ -41,10 +43,12 @@ h1{
 #count{
   font-size: 30px;
   margin:5px;
-  color: rgb(26, 240, 0);
+  color: black;
 }
 .kingname,
-.num-input{
+.num-input{  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
