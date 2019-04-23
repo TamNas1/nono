@@ -15,7 +15,7 @@ solve.addEventListener("click", () => {
       return acc.concat(current.value);
     return acc;
   }, []);
-
+let flag = true;
   getCombinations(newarr, selectn, (d) => {
     if(newarr.length > 5){
       setTimeout(() => {
@@ -27,7 +27,7 @@ solve.addEventListener("click", () => {
         while (i < l) {
           let x = document.createElement('p');
           x.textContent = d[i];
-          x.className = "result"
+          x.className = flag ? "result1" : "result2"
           document.getElementById('resultsChild').appendChild(x)
           i++;
         }
