@@ -44,6 +44,7 @@ h1{
   color: rgb(26, 240, 0);
 }
 .num-input{
-  display: grid;
+  display: flex;
+  flex-wrap:wrap;
   justify-content: center;
 }
