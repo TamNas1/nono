@@ -1,12 +1,13 @@
 let arr = document.getElementsByClassName('num');
 const submitbtn = document.getElementById('solve');
+let newarr = [];
 
 solve.addEventListener("click", () => {
  document.getElementById('results').removeChild(document.getElementById('resultsChild'));
  let y = document.createElement('div');
  document.getElementById('results').appendChild(y);
  y.id = 'resultsChild';
-  let newarr = [];
+
   let e = document.getElementById("selectn");
   let selectn = e.options[e.selectedIndex].text;
   newarr = Array.from(arr).reduce((acc, current) => {
@@ -16,19 +17,26 @@ solve.addEventListener("click", () => {
   }, []);
 
   getCombinations(newarr, selectn, (d) => {
-    setTimeout(() => {
-      let l = d.length;
-      console.log(d);
-      document.getElementById('count').textContent = l.toString();
-      let i = 0;
-      while (i < l) {
-        let x = document.createElement('p');
-        x.textContent = d[i];
-        x.className = "result"
-        document.getElementById('resultsChild').appendChild(x)
-        i++;
-      }
-    }, 0)
+    if(newarr.length > 5){
+      setTimeout(() => {
+        let l = d.length;
+        document.getElementById('countinput').textContent += newarr.length;
+        console.log(d);
+        document.getElementById('count').textContent += l.toString();
+        let i = 0;
+        while (i < l) {
+          let x = document.createElement('p');
+          x.textContent = d[i];
+          x.className = "result"
+          document.getElementById('resultsChild').appendChild(x)
+          i++;
+        }
+      }, 0)
+    }else{
+      document.getElementById('count').textContent += "0";
+      document.getElementById('countinput').textContent += newarr.length;
+    }
+
   });
 })
 
@@ -42,3 +50,13 @@ function* choose(l, r = 0, s = -1) {
 const getCombinations = (l, s, cb) => {
   return cb([...choose(l, s)])
 }
+document.getElementById('clear').addEventListener("click",()=>{
+  document.getElementById('results').removeChild(document.getElementById('resultsChild'));
+  let y = document.createElement('div');
+  document.getElementById('results').appendChild(y);
+  document.getElementById('count').textContent = "Possibilities: ";
+  document.getElementById('countinput').textContent = "Inputs: ";
+  for(let i = 0;i<arr.length;i++){
+    arr[i].value = '';
+  }
+})

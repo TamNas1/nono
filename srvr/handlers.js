@@ -4,7 +4,8 @@ const fs = require('fs');
 const exType = {
   html: 'text/html',
   css: 'text/css',
-  js: 'application/javascript'
+  js: 'application/javascript',
+  png: 'image/png',
 };
 
 const handleServer500 = (res, err) => {
