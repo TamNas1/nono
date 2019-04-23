@@ -3,8 +3,12 @@ const submitbtn = document.getElementById('solve');
 let newarr = [];
 
 solve.addEventListener("click", () => {
+  document.getElementById('count').textContent = "Possibilities: ";
+  document.getElementById('countinput').textContent = "Inputs: ";
  document.getElementById('results').removeChild(document.getElementById('resultsChild'));
  let y = document.createElement('div');
+ let z = document.createElement('hr');
+ y.appendChild(z)
  document.getElementById('results').appendChild(y);
  y.id = 'resultsChild';
 
