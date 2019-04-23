@@ -43,3 +43,7 @@ h1{
   margin:5px;
   color: rgb(26, 240, 0);
 }
+.num-input{
+  display: grid;
+  justify-content: center;
+}

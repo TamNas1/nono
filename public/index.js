@@ -27,7 +27,9 @@ let flag = true;
         while (i < l) {
           let x = document.createElement('p');
           x.textContent = d[i];
-          x.className = flag ? "result1" : "result2"
+          x.className = flag ? "result1" : "result2";
+          flag ? flag=false :flag=true;
+
           document.getElementById('resultsChild').appendChild(x)
           i++;
         }
