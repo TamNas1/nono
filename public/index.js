@@ -35,6 +35,7 @@ let flag = true;
           flag ? flag=false :flag=true;
 
           document.getElementById('resultsChild').appendChild(x)
+          x.appendChild(document.createElement('hr'))
           i++;
         }
       }, 0)
