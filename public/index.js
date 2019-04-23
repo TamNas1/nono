@@ -26,7 +26,7 @@ let flag = true;
         let l = d.length;
         document.getElementById('countinput').textContent += newarr.length;
         console.log(d);
-        document.getElementById('count').textContent += l.toString();
+        document.getElementById('count').textContent += l.toLocaleString('en').toString();
         let i = 0;
         while (i < l) {
           let x = document.createElement('p');
