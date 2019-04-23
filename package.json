@@ -1,0 +1,25 @@
+{
+  "name": "nono",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "connect": "nodemon srvr/server.js",
+    "start": "node srvr/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamerNasser/nono.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tamerNasser/nono/issues"
+  },
+  "homepage": "https://github.com/tamerNasser/nono#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "nodemon": "^1.18.11",
+    "path": "^0.12.7"
+  }
+}

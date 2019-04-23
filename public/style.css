@@ -1,0 +1,39 @@
+body{
+  background: rgb(64,100,210);
+  background: linear-gradient(90deg, rgba(64,100,210,1) 0%, rgba(73,128,247,1) 0%, rgba(19,54,198,1) 100%);  }
+input {
+  width: 50px;
+  height: 50px;
+  margin: 1px;
+  font-size: 36px;
+}
+.option67{
+  font-size: 36px;
+}
+.containerres{
+
+}
+
+#solve{
+  /* display: flex; */
+
+  /* align-self: flex-start; */
+  width: 120px;
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h1{
+  font-size: 50px;
+  /* margin: 0 auto; */
+}
+.result{
+  color: white;
+  font-size: 30px;
+  margin:1px;
+}
+#count{
+  font-size: 50px;
+  margin:5px;
+  color: red;
+}
