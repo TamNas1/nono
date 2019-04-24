@@ -21,7 +21,7 @@ solve.addEventListener("click", () => {
   }, []);
 let flag = true;
   getCombinations(newarr, selectn, (d) => {
-    if(newarr.length > 5){
+    if(newarr.length > selectn-1){
       setTimeout(() => {
         let l = d.length;
         document.getElementById('countinput').textContent += newarr.length;
