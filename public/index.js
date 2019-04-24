@@ -1,27 +1,28 @@
 let arr = document.getElementsByClassName('num');
 const submitbtn = document.getElementById('solve');
 let newarr = [];
+let e = document.getElementById("selectn");
 
 solve.addEventListener("click", () => {
   document.getElementById('count').textContent = "Possibilities: ";
   document.getElementById('countinput').textContent = "Inputs: ";
- document.getElementById('results').removeChild(document.getElementById('resultsChild'));
- let y = document.createElement('div');
- let z = document.createElement('hr');
- y.appendChild(z)
- document.getElementById('results').appendChild(y);
- y.id = 'resultsChild';
+  document.getElementById('results').removeChild(document.getElementById('resultsChild'));
+  let y = document.createElement('div');
+  let z = document.createElement('hr');
+  y.appendChild(z)
+  document.getElementById('results').appendChild(y);
+  y.id = 'resultsChild';
 
-  let e = document.getElementById("selectn");
+
   let selectn = e.options[e.selectedIndex].text;
   newarr = Array.from(arr).reduce((acc, current) => {
     if (current.value !== "")
       return acc.concat(current.value);
     return acc;
   }, []);
-let flag = true;
+  let flag = true;
   getCombinations(newarr, selectn, (d) => {
-    if(newarr.length > selectn-1){
+    if (newarr.length > selectn - 1) {
       setTimeout(() => {
         let l = d.length;
         document.getElementById('countinput').textContent += newarr.length;
@@ -32,14 +33,14 @@ let flag = true;
           let x = document.createElement('p');
           x.textContent = d[i];
           x.className = flag ? "result1" : "result2";
-          flag ? flag=false :flag=true;
+          flag ? flag = false : flag = true;
 
           document.getElementById('resultsChild').appendChild(x)
           x.appendChild(document.createElement('hr'))
           i++;
         }
       }, 0)
-    }else{
+    } else {
       document.getElementById('count').textContent += "0";
       document.getElementById('countinput').textContent += newarr.length;
     }
@@ -57,13 +58,23 @@ function* choose(l, r = 0, s = -1) {
 const getCombinations = (l, s, cb) => {
   return cb([...choose(l, s)])
 }
-document.getElementById('clear').addEventListener("click",()=>{
+document.getElementById('clear').addEventListener("click", () => {
   document.getElementById('results').removeChild(document.getElementById('resultsChild'));
   let y = document.createElement('div');
   document.getElementById('results').appendChild(y);
   document.getElementById('count').textContent = "Possibilities: ";
   document.getElementById('countinput').textContent = "Inputs: ";
-  for(let i = 0;i<arr.length;i++){
+  for (let i = 0; i < arr.length; i++) {
     arr[i].value = '';
+  }
+})
+
+
+document.getElementById('random').addEventListener('click', () => {
+  let limit = e.options[e.selectedIndex].text;
+
+  for (let i = 0; i < arr.length; i++) {
+    let k = Math.floor(Math.random() * (parseInt(70) - parseInt(1))) + 1;
+    arr[i].value = k;
   }
 })
